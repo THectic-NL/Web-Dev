@@ -1,10 +1,8 @@
-# Web-Dev - Static Website Template – HTML, CSS & JavaScript
+# Web-Dev - Static Bootstrap 5 Template
 
-This project is a **template for a personal website**, built using **HTML**, **CSS**, and **JavaScript**. You can use this as a starting point to build your own static website — just add your own content, images, and styles.
+This project is a **template for a personal website**, built using **HTML**, **CSS**, and **JavaScript**. You can use this as a starting point to build your own static website - just add your own content, images, and styles.
 
-This template was created from scratch and used by myself in the past. Since then, I've moved on to more **dynamic websites** using frameworks and databases. I'm keeping this repository **online and archived** so others can use it as a base for their own projects.
-
-> The site that was originally based on this template has changed significantly over time.
+This template was created from scratch and used internally in the past. We're keeping this repository  so others can use it as a base for their own projects.
 
 ## Contents
 
@@ -37,23 +35,15 @@ This template was created from scratch and used by myself in the past. Since the
 2. Open `index.html` in your browser  
 3. Modify and expand the content however you like
 
-## Docker / Docker Compose
+## Docker / Podman
 
-You can run this project using Docker:
-
-```bash
-docker run -d -p 8080:80 stensel8/web-dev:latest
-```
-
-Or use Docker Compose:
+You can run this project using Docker/Podman:
 
 ```bash
-docker-compose up --build -d
+docker compose up --build -d
 ```
 
 Then open: [http://localhost:8080](http://localhost:8080)
-
-Docker image: [Docker Hub – stensel8/web-dev](https://hub.docker.com/r/stensel8/web-dev)
 
 ## License
 
