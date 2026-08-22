@@ -65,6 +65,7 @@
           <ul>
             <li><a class="nav-link active" href="#header">Home</a></li>
             <li><a class="nav-link" href="#about">About me</a></li>
+            <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
             <li><a class="nav-link" href="#resume">My resume</a></li>
             <li><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
@@ -228,6 +229,114 @@
     </section>
     <!-- End of About Me Section -->
 
+    <!-- Portfolio Section (GLightbox demo) -->
+    <!--
+      GLightbox is initialised in webroot/js/main.js:
+
+        GLightbox({ selector: '.portfolio-lightbox' });
+        GLightbox({ selector: '.portfolio-details-lightbox', width: '90%', height: '90vh' });
+
+      That means any <a class="portfolio-lightbox"> on this page is picked up
+      automatically - there is no extra JavaScript to write here. The attributes:
+
+        href            the file GLightbox opens; the type is derived from the extension
+        data-gallery    items sharing a value become one gallery you can page through
+        data-glightbox  "title: ...; description: ..." renders a caption
+        data-type       only needed when the href has no usable extension
+
+      The .portfolio-container / #portfolio-flters wrapper is what Isotope filters
+      on (also wired up in main.js). Drop those two if you just want a plain grid.
+    -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>A few placeholder items.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-backgrounds">Backgrounds</li>
+              <li data-filter=".filter-people">People</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-backgrounds">
+            <div class="portfolio-wrap">
+              <img src="assets/img/bg-masthead.avif" class="img-fluid" alt="Placeholder background" loading="lazy">
+              <div class="portfolio-info">
+                <h4>Placeholder 1</h4>
+                <p>Backgrounds</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/bg-masthead.avif"
+                     class="portfolio-lightbox"
+                     data-gallery="portfolioGallery"
+                     data-glightbox="title: Placeholder 1; description: Swap this image for your own."
+                     title="Open in lightbox"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-backgrounds">
+            <div class="portfolio-wrap">
+              <img src="assets/img/bg-masthead-purple.avif" class="img-fluid" alt="Placeholder background in purple" loading="lazy">
+              <div class="portfolio-info">
+                <h4>Placeholder 2</h4>
+                <p>Backgrounds</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/bg-masthead-purple.avif"
+                     class="portfolio-lightbox"
+                     data-gallery="portfolioGallery"
+                     data-glightbox="title: Placeholder 2; description: Same gallery, so you can page between them."
+                     title="Open in lightbox"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-people">
+            <div class="portfolio-wrap">
+              <img src="assets/img/profile.avif" class="img-fluid" alt="Placeholder portrait" loading="lazy">
+              <div class="portfolio-info">
+                <h4>Placeholder 3</h4>
+                <p>People</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/profile.avif"
+                     class="portfolio-lightbox"
+                     data-gallery="portfolioGallery"
+                     data-glightbox="title: Placeholder 3; description: Leave data-gallery off to open an item on its own."
+                     title="Open in lightbox"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--
+            Same class, other content types - GLightbox picks the right player:
+
+              <a href="https://www.youtube.com/watch?v=VIDEO_ID" class="portfolio-lightbox">video</a>
+              <a href="https://vimeo.com/VIDEO_ID" class="portfolio-lightbox">video</a>
+              <a href="https://example.com/page" class="portfolio-lightbox" data-type="external">iframe</a>
+
+            And for a full details page there is the second instance from main.js,
+            which opens at 90% / 90vh instead of fitting the asset:
+
+              <a href="portfolio-details.html" class="portfolio-details-lightbox" data-type="external">details</a>
+          -->
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End of Portfolio Section -->
+
     <!-- Resume Section -->
     <section id="resume" class="resume">
       <div class="container">
@@ -311,10 +420,10 @@
             <form action="https://form_handler_here" method="POST" class="php-email-form contact-form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Lorem Ipsum Name" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Lorem Ipsum Name" autocomplete="name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="_replyto" id="email" placeholder="lorem@example.com" required>
+                  <input type="email" class="form-control" name="_replyto" id="email" placeholder="lorem@example.com" autocomplete="email" required>
                 </div>
               </div>
               <div class="form-group mt-3">

@@ -744,6 +744,14 @@ section .container {
   margin-bottom: 30px;
 }
 
+/* Keeps the tiles the same size even when the supplied images
+   have different aspect ratios. */
+.portfolio .portfolio-wrap img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .portfolio #portfolio-flters {
   padding: 0;
   margin: 0 auto 15px auto;
