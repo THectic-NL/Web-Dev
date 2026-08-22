@@ -31,7 +31,12 @@
   /**
    * Scrolls to an element with header offset
    */
-  const scrollto = (el) => {
+  /* Let op: dit scrollt naar de bovenkant, niet naar een element. De functie
+     kreeg een `el` mee die hij nooit gebruikte, en de drie aanroepen gaven er
+     netjes een hash aan door die nergens heen ging. Parameter en argumenten
+     zijn weg; het gedrag is exact hetzelfde gebleven. Was het de bedoeling om
+     wel naar de sectie te scrollen, dan is dat een aparte wijziging. */
+  const scrollto = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -41,7 +46,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function() {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -97,7 +102,7 @@
         section.classList.add('section-show')
       }
 
-      scrollto(this.hash)
+      scrollto()
     }
   }, true)
 
@@ -179,7 +184,7 @@ on('click', '#navbar .nav-link', function(e) {
     }
 
     hideFaviconOnNavigate(); // Hide favicon on navigation
-    scrollto(this.hash);
+    scrollto();
   }
 }, true);
 
@@ -208,7 +213,7 @@ on('click', '#navbar .nav-link', function(e) {
           initial_nav.classList.add('section-show')
         }, 350);
 
-        scrollto(window.location.hash)
+        scrollto()
       }
     }
   });
@@ -221,7 +226,7 @@ on('click', '#navbar .nav-link', function(e) {
     new Waypoint({
       element: skilsContent,
       offset: '80%',
-      handler: function(direction) {
+      handler: function() {
         let progress = select('.progress .progress-bar', true);
         progress.forEach((el) => {
           el.style.width = el.getAttribute('aria-valuenow') + '%'
@@ -290,14 +295,14 @@ on('click', '#navbar .nav-link', function(e) {
   /**
    * Initiate portfolio lightbox 
    */
-  const portfolioLightbox = GLightbox({
+  GLightbox({
     selector: '.portfolio-lightbox'
   });
 
   /**
    * Initiate portfolio details lightbox 
    */
-  const portfolioDetailsLightbox = GLightbox({
+  GLightbox({
     selector: '.portfolio-details-lightbox',
     width: '90%',
     height: '90vh'

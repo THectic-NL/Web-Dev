@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const langToggleBtn = document.getElementById('lang-toggle');
-    const content = document.getElementById('content');
     let isEnglish = false; // Start with the default language (Dutch)
 
     langToggleBtn.addEventListener('click', () => {
