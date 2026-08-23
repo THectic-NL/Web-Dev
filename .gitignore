@@ -1,0 +1,11 @@
+# Local environment variables
+.env
+.env.*
+*.env
+
+# Claude Code local settings (machine-specific, may contain allowed commands)
+.claude/
+
+# Editor and OS cruft
+.DS_Store
+Thumbs.db
