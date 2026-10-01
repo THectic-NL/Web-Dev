@@ -1,4 +1,4 @@
-FROM nginx:1.31.5-alpine-slim@sha256:3b171d7224b669faa3cc2137fea0a65301791df1ec1f271ebd2a2b7461f7fade
+FROM nginx:1.31.6-alpine-slim@sha256:f761b94f2cb9e8e05e2943d5f773609596113ef69b54e2433a996d109a8f78b7
 
 # Debugging only: install bash and nano (uncomment if needed)
 # RUN apk update && apk add --no-cache bash nano
